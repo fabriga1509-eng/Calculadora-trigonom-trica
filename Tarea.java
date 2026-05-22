@@ -1,5 +1,4 @@
 import java.util.Scanner; // Importamos Scanner para leer entrada del usuario
-import java.lang.Math;
 public class Tarea {
     static void  calcular(double angulo, int  opcion) {
         double resultado;
@@ -15,13 +14,13 @@ public class Tarea {
                 resultado = Math.tan(angulo);
                 System.out.println("tan("+angulo+") = "+resultado);
             case 4:
-                resultado = Math.arcsin(angulo);
+                resultado = Math.asin(angulo);
                 System.out.println("arcsin("+angulo+") = "+resultado);
             case 5:
-                resultado = Math.arccos(angulo);
+                resultado = Math.acos(angulo);
                 System.out.println("arccos("+angulo+") = "+resultado);
             case 6:
-                resultado = Math.arctan(angulo);
+                resultado = Math.atan(angulo);
                 System.out.println("arctan("+angulo+") = "+resultado);
             case 7:
                 resultado = Math.sinh(angulo);
@@ -35,7 +34,6 @@ public class Tarea {
             default:
                 System.out.println("Error");
         }
-        return;
     }
     //Metodo para mostrar opciones de la calculadora
     static void mostrarMenu(){
