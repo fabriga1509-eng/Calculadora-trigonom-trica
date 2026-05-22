@@ -1,8 +1,41 @@
 import java.util.Scanner; // Importamos Scanner para leer entrada del usuario
+import java.lang.Math;
 public class Tarea {
-    static double  calcular(double angulo, int  opcion) {
-        System.out.println("Se terminara proximamente");
-        return 0;
+    static void  calcular(double angulo, int  opcion) {
+        double resultado;
+        switch (opcion)
+        {
+            case 1:
+                resultado = Math.sin(angulo);
+                System.out.println("sin("+angulo+") = "+resultado);
+            case 2:
+                resultado = Math.cos(angulo);
+                System.out.println("cos("+angulo+") = "+resultado);
+            case 3:
+                resultado = Math.tan(angulo);
+                System.out.println("tan("+angulo+") = "+resultado);
+            case 4:
+                resultado = Math.arcsin(angulo);
+                System.out.println("arcsin("+angulo+") = "+resultado);
+            case 5:
+                resultado = Math.arccos(angulo);
+                System.out.println("arccos("+angulo+") = "+resultado);
+            case 6:
+                resultado = Math.arctan(angulo);
+                System.out.println("arctan("+angulo+") = "+resultado);
+            case 7:
+                resultado = Math.sinh(angulo);
+                System.out.println("sinh("+angulo+") = "+resultado);
+            case 8:
+                resultado = Math.cosh(angulo);
+                System.out.println("cosh("+angulo+") = "+resultado);
+            case 9:
+                resultado = Math.tanh(angulo);
+                System.out.println("tanh("+angulo+") = "+resultado);
+            default:
+                System.out.println("Error");
+        }
+        return;
     }
     //Metodo para mostrar opciones de la calculadora
     static void mostrarMenu(){
@@ -23,18 +56,23 @@ public class Tarea {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int opcion;
-        do { 
+        while (true)
+        { 
             mostrarMenu();
             opcion = sc.nextInt();
+            if (opcion < 0 || opcion > 9)
+            {
+                System.out.println("Opcion invalida!");
+                continue;
+            }
             if(opcion == 0){
                 System.out.println("Hasta luego!");
                 break;
             }
             System.out.println("Digite el angulo");
             double angulo = sc.nextDouble();
-            double resultado = calcular(angulo,opcion);
-
-        } while (opcion != 0);
+            calcular(angulo,opcion);
+        }
         sc.close();
     }
 }
