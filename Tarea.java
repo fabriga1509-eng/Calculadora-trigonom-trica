@@ -33,7 +33,6 @@ public class Tarea {
             System.out.println("Digite el angulo");
             double angulo = sc.nextDouble();
             double resultado = calcular(angulo,opcion);
-
         } while (opcion != 0);
         sc.close();
     }
